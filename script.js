@@ -25,7 +25,8 @@ for(let i=0;i<daysInThisMonth();i++)
     const newDiv = document.createElement("div");
     newDiv.classList.add("radius");
     newDiv.classList.add("trigger"+i);
-    console.log(i);
+    diaries[i]=localStorage.getItem(i)!=null?localStorage.getItem(i):"";
+   // console.log(i);
    // newDiv.innerHTML+=``
    //newDiv.classList.add("modal");
 
@@ -80,6 +81,7 @@ function toggleModal1(event) {
     //console.log(st);
 
      var num=parseInt(st);
+     localStorage.setItem(num, input.value);
      diaries[num]=input.value;
      console.log(input.value)
     // console.log(num);
