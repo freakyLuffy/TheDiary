@@ -11,17 +11,7 @@ var input = document.getElementById("text");
 var ok=0;
 for(let i=0;i<daysInThisMonth();i++)
 {
-    // if(i>27)
-    // {
-    //     // const newDiv = document.createElement("div");
-    //     // newDiv.classList.add("radius");
-    //     // newDiv.classList.add("trigger"+i);
-    //     // const newContent = document.createTextNode(i+1);
-    //     // newDiv.append(newContent);
-    //     // newDiv1.appendChild(newDiv);
-    //     // ok=1;
-    // }
-    // else{
+
     const newDiv = document.createElement("div");
     newDiv.classList.add("radius");
     newDiv.classList.add("trigger"+i);
@@ -46,44 +36,29 @@ const modal = document.querySelector(".modal");
 const trigger = document.querySelector(".trigger");
 const text=document.getElementById(".modal-content");
 const closeButton = document.querySelector(".close-button");
-console.log(modal);
+// console.log(modal);
 function toggleModal(ind) {
-   // console.log(ind);
-    var toadd="close-button"+ind;
+    console.log(ind);
+var toadd="close-button"+ind;
+console.log(ind+"modal")
  
-    
 closeButton.classList.add(toadd);
-// var input = document.createElement("textarea");
-// input.setAttribute("id", "text"+ind);
 const trigger = document.querySelector(".trigger"+ind);
-
- 
-
-// console.log(closeButton);
-    // closeButton.classList.pop();
-    input.value=diaries[ind];
-    
- 
-  
-    // closeButton.classList[1].value=toadd;
-
-    // console.log(ind);
-    // text.value=diaries[ind];
-    // console.log(text.value);
+    input.value= localStorage.getItem(ind)
     modal.classList.toggle("show-modal");
-   
 }
 function toggleModal1(event) {
-    //console.log(closeButton.classList[closeButton.classList.length-1]);
-    // closeButton.classList.
     var s1=closeButton.classList[closeButton.classList.length-1];
     var st=s1.substring(12);
-    //console.log(st);
+    //csonsole.log(st);
+    closeButton.classList.remove(s1);
 
      var num=parseInt(st);
+     console.log(num+"modal1")
      localStorage.setItem(num, input.value);
+    // console.log(input.value)
      diaries[num]=input.value;
-     console.log(input.value)
+   //  console.log(input.value)
     // console.log(num);
     // console.log("himakhyati");
     
@@ -99,6 +74,7 @@ function windowOnClick(event) {
      console.log(event.target);
     var st=event.target.classList[1].substring(0,7);
     var num=parseInt(event.target.classList[1].substring(7));
+    console.log(num+"windowclick")
     if(st=="trigger")
     {
         toggleModal(num);
