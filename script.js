@@ -15,7 +15,8 @@ for(let i=0;i<daysInThisMonth();i++)
     const newDiv = document.createElement("div");
     newDiv.classList.add("radius");
     newDiv.classList.add("trigger"+i);
-    diaries[i]=localStorage.getItem(i)!=null?localStorage.getItem(i):"";
+    localStorage.setItem(i,diaries[i]);
+   // diaries[i]=localStorage.getItem(i)!=null?localStorage.getItem(i):"";
    // console.log(i);
    // newDiv.innerHTML+=``
    //newDiv.classList.add("modal");
@@ -38,7 +39,7 @@ const text=document.getElementById(".modal-content");
 const closeButton = document.querySelector(".close-button");
 // console.log(modal);
 function toggleModal(ind) {
-    console.log(ind);
+  //  console.log(ind);
 var toadd="close-button"+ind;
 console.log(ind+"modal")
  

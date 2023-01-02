@@ -21,7 +21,7 @@ h1{
 }
 #box{
     /* justify-content: space-evenly; */
-    min-height: 100px;
+    min-height: 200px;
     border: 1px  solid black;
     margin:0 auto;
     width:400px;
@@ -40,12 +40,12 @@ h1{
     align-items: center;
     text-align: center;
     font-family: 'Indie Flower';
-    margin:10px auto;
+    margin:.5em auto;
     border-width:.15em;
     /* display: inline-block; */
     /* margin:5px 0 0 5px; */
-    padding:10px; 
-    width: 40px;
+    padding:.5em; 
+    width: 2em;
     cursor:pointer;
     /* z-index: 1; */
 }
@@ -173,4 +173,17 @@ h1{
     font-weight: bold;
     font-size: 18px;
     box-sizing: border-box;
+}
+@media (max-width: 640px) {
+   
+    #box{
+        width:90%;
+        min-height: 100px;
+    }
+    .paper{
+        width:20rem;
+        height: 20rem;
+    }
+
+
 }
